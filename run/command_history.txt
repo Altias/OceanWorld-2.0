@@ -1,1 +1,0 @@
-/give Dev oceanworld:sea_key
