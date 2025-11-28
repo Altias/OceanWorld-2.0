@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "axis=z": { "model": "oceanworld:block/sea_portal_ew" },
+    "axis=x": { "model": "oceanworld:block/sea_portal_ns" }
+  }
+}

@@ -1,0 +1,110 @@
+---- Minecraft Crash Report ----
+// But it works on my machine.
+
+Time: 2025-11-28 15:27:24
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:181) ~[loader-4.0.42.jar%23140!/:4.0] {}
+-- Mod loading issue for: cpapireforged --
+Details:
+	Mod file: /Users/jacky/.gradle/caches/modules-2/files-2.1/net.kyrptonaught.customportalapi/cpapireforged-neo-1.21.1/1.2.1/c05d0327258ea639194407eab97811a6d828b586/cpapireforged-neo-1.21.1-1.2.1.jar
+	Failure message: Custom Portal API ReForged (cpapireforged) encountered an error while dispatching the net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event
+		net.neoforged.fml.ModLoadingException: Loading errors encountered:
+			- Ocean World (oceanworld) encountered an error while dispatching the net.kyrptonaught.customportalapi.CustomPortalRegistrationEvent event
+			  java.lang.ClassCastException: class net.minecraft.world.level.block.Block cannot be cast to class java.util.function.Supplier (net.minecraft.world.level.block.Block is in module minecraft@1.21.1 of loader 'TRANSFORMER' @79b08632; java.util.function.Supplier is in module java.base of loader 'bootstrap')
+		
+	Mod version: 1.2.1
+	Mod issues URL: <No issues URL found>
+	Exception message: net.neoforged.fml.ModLoadingException: Loading errors encountered:
+	- Ocean World (oceanworld) encountered an error while dispatching the net.kyrptonaught.customportalapi.CustomPortalRegistrationEvent event
+	  java.lang.ClassCastException: class net.minecraft.world.level.block.Block cannot be cast to class java.util.function.Supplier (net.minecraft.world.level.block.Block is in module minecraft@1.21.1 of loader 'TRANSFORMER' @79b08632; java.util.function.Supplier is in module java.base of loader 'bootstrap')
+
+Stacktrace:
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:181) ~[loader-4.0.42.jar%23140!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$postEvent$13(ModLoader.java:358) ~[loader-4.0.42.jar%23140!/:4.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-4.0.42.jar%23140!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.postEvent(ModLoader.java:358) ~[loader-4.0.42.jar%23140!/:4.0] {}
+	at TRANSFORMER/cpapireforged@1.2.1/net.kyrptonaught.customportalapi.CustomPortalsMod.onCommonStartUp(CustomPortalsMod.java:84) ~[cpapireforged-neo-1.21.1-1.2.1.jar%23188!/:1.2.1] {re:classloading,re:mixin}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%23144!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23144!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:328) ~[bus-8.0.5.jar%23144!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:158) ~[loader-4.0.42.jar%23140!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelEvent$4(ModLoader.java:172) ~[loader-4.0.42.jar%23140!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.42.jar%23140!/:4.0] {}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Mac OS X (aarch64) version 14.1.2
+	Java Version: 21.0.9, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 363773272 bytes (346 MiB) / 742391808 bytes (708 MiB) up to 8589934592 bytes (8192 MiB)
+	CPUs: 10
+	Processor Vendor: Apple Inc.
+	Processor Name: Apple M1 Pro
+	Identifier: Apple Inc. Family 0x1b588bb3 Model 0 Stepping 0
+	Microarchitecture: ARM64 SoC: Firestorm + Icestorm
+	Frequency (GHz): 3.23
+	Number of physical packages: 1
+	Number of physical CPUs: 10
+	Number of logical CPUs: 10
+	Graphics card #0 name: Apple M1 Pro
+	Graphics card #0 vendor: Apple (0x106b)
+	Graphics card #0 VRAM (MiB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Memory slot #0 capacity (MiB): 0.00
+	Memory slot #0 clockSpeed (GHz): 0.00
+	Memory slot #0 type: unknown
+	Virtual memory max (MiB): 32768.00
+	Virtual memory used (MiB): 16695.97
+	Swap memory total (MiB): 0.00
+	Swap memory used (MiB): 0.00
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 114795.09, total: 471482.09
+	Space in storage for workdir (MiB): available: 114795.09, total: 471482.09
+	JVM Flags: 0 total; 
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		cpapireforged-neo-1.21.1-1.2.1.jar                |Custom Portal API ReForged    |cpapireforged                 |1.2.1               |Manifest: NOSIGNATURE
+		neoforge-21.1.213.jar                             |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
+		neoforge-21.1.213.jar                             |NeoForge                      |neoforge                      |21.1.213            |Manifest: NOSIGNATURE
+		main                                              |Ocean World                   |oceanworld                    |2.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: 63d26104-4ef1-49a3-b6ea-9f301579c305
+	FML: 4.0.42
+	NeoForge: 21.1.213
